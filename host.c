@@ -28,6 +28,10 @@ int main(int argc, char** argv) {
   char buf[2048];
   int cnt;
   int i, j, k;
+
+
+
+  
   /* // 受信バッファを初期化する */
   /* memset(buf, 0, sizeof(buf)); */
   // 通信用ディスクリプタの配列を初期化する
