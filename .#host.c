@@ -1,1 +1,0 @@
-yuckey@coop-note-ubuntu.32677:1559913093
