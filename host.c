@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
   struct sockaddr_in from_addr;
   char buf[2048];
   int cnt;
-  int i, j, k;
+  int i;
 
 
 
