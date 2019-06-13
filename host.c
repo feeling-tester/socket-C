@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
           }
         }
         if (connection_flag == 1) {
-          for (int i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
+          for (i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
             if (fd_array[i] != -1) {
               /* puts("ss"); */
               if (message[0] - '0' == fd_array[i]) {
