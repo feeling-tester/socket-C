@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
       if (FD_ISSET(fd, &fds_set)) {
         char message[1024] = {0};
         // 接続されたならクライアントからの接続を確立する
-        for (int i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
+        for (i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
           if (fd_array[i] == -1) {
             if ((fd_array[i] = accept(fd, (struct sockaddr *)&from_addr, &len)) < 0) {
               goto end;
@@ -135,7 +135,7 @@ int main(int argc, char** argv) {
       int recieved_flag = 0;
       //printf("%ld\n", fds_set);
 
-      for (int i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
+      for (i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++) {
           // 受信待ちディスクリプタにデータがあるかを調べる
         if (FD_ISSET(fd_array[i], &fds_set)) {
           // データがあるならパケット受信する
@@ -164,7 +164,7 @@ int main(int argc, char** argv) {
       }
 
       if (recieved_flag == 1) {
-        for (int i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++){
+        for (i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++){
           if (fd_array[i] != -1) {
             if (send(fd_array[i], buf, sizeof(buf), 0) < 0) {
               perror("send");
@@ -179,7 +179,7 @@ int main(int argc, char** argv) {
   }
  end:
   // パケット送受信用ソケットクローズ
-  for (int i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++){
+  for (i = 0; i < sizeof(fd_array)/sizeof(fd_array[0]); i++){
     close(fd_array[i]);
   }
   // 接続要求待ち受け用ソケットクローズ
